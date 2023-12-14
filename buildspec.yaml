@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18.x
+    commands:
+      - npm install
+
+  build:
+    commands:
+      - npm run build
+      - ls
+
+artifacts:
+  files:
+    - build/**/*
+    - node_modules/**/*
