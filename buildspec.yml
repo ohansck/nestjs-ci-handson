@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    run-as: root
+    runtime-versions:
+      nodejs: 18.x
+    commands:
+      - echo Done installing nodejs version 18.x
+
+  build:
+    runs-as: root
+    commands:
+      - echo Installing node modules
+      - npm install
+      - npm run build
+
+  post-build:
+    commands:
+      - echo Done building...
+      - ls
+
+artifacts:
+  files:
+    - dist/**/*
+    - node_modules/**/*
+    - package*.json
