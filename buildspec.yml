@@ -9,13 +9,13 @@ phases:
       - echo Done installing nodejs version 18.x
 
   build:
-    runs-as: root
+    run-as: root
     commands:
       - echo Installing node modules
       - npm install
       - npm run build
 
-  post-build:
+  post_build:
     commands:
       - echo Done building...
       - ls
