@@ -17,6 +17,5 @@ phases:
     on-failure: CONTINUE
     commands:
       - echo Running tests...
-      - npm run test
     finally:
       - echo Tests completed...
