@@ -6,7 +6,7 @@ env:
     ACCOUNT_ID: $(aws sts get-caller-identity --query Account --output text)
     IMAGE_TAG: latest
     REGION: "us-east-1"
-    ECR_REGISTRY: $(aws ecr describe-repositories --repository-names $REGION --region us-east-1 --query repositories[0].repositoryUri --output text)
+    ECR_REGISTRY: $(aws ecr describe-repositories --repository-names $ECR_REPOSITORY --region $REGION --query repositories[0].repositoryUri --output text)
 
 phases:
   install:
