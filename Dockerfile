@@ -1,4 +1,4 @@
-ARG NODE_VERSION=node:18-alpine3.17
+ARG NODE_VERSION=node:lts-alpine
 ARG ENV=production
 
 #Build stage
