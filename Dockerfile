@@ -15,7 +15,7 @@ RUN npm ci && \
 USER node
 
 
-#Stage 2: Creating a minimal image for production
+#Stage 2: Creating a minimal image for production now
 FROM $NODE_VERSION As production
 
 WORKDIR /app
