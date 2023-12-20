@@ -27,8 +27,8 @@ phases:
   build:
     commands:
       - docker run -t -i -p 3000:3000 -d $ECR_REGISTRY:$IMAGE_TAG
-      - echo "Executing port test in 2 minutes..."
-      - sleep 120
+      - echo "Executing port test in 1 minute(s)..."
+      - sleep 60
       - |
         if curl --output /dev/null --silent --head --fail http://localhost:3000/health; then
           echo "Application is healthy."
