@@ -1,10 +1,11 @@
 version: 0.2
 
 env:
+  shell: bash
   variables:
-    ECR_REPOSITORY: "cloud-nestjs"
+    ECR_REPOSITORY: cloud-nestjs
     IMAGE_TAG: latest
-    REGION: "us-east-1"
+    REGION: us-east-1
 
 phases:
   install:
@@ -25,10 +26,10 @@ phases:
 
   build:
     commands:
-      - >
-        docker run -t -i -p 3000:3000 -d $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "Executing port test in 2 minutes..."
-        sleep 120
+      - docker run -t -i -p 3000:3000 -d $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      - echo "Executing port test in 2 minutes..."
+      - sleep 120
+      - |
         if curl --output /dev/null --silent --head --fail http://localhost:3000/health; then
           echo "Application is healthy."
           exit 0
