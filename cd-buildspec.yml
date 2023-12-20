@@ -21,12 +21,12 @@ phases:
       - aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
       - echo Login to ECR successful...
       - echo Building and tagging docker image...
-      - docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+      - docker build -t $ECR_REGISTRY:$IMAGE_TAG .
       - echo Successfully built and tagged docker image...
 
   build:
     commands:
-      - docker run -t -i -p 3000:3000 -d $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      - docker run -t -i -p 3000:3000 -d $ECR_REGISTRY:$IMAGE_TAG
       - echo "Executing port test in 2 minutes..."
       - sleep 120
       - |
@@ -41,5 +41,5 @@ phases:
   post_build:
     commands:
       - echo Pushing docker image to registry...
-      - docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-      - echo "image=$ECR_REPOSITORY:$IMAGE_TAG"
+      - docker push $ECR_REGISTRY:$IMAGE_TAG
+      - echo "image=$ECR_REGISTRY:$IMAGE_TAG"
