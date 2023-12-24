@@ -1,4 +1,4 @@
-CI
+## CI
     Build and Unit tests
         [Install, Build, Test]
 
@@ -11,7 +11,7 @@ CI
         Smoke test
         Push image    
 
-CD
+## CD
     (Already existing environment, immutable infrastructure)
     
     Detect changes to CI artifact (Image repo)
