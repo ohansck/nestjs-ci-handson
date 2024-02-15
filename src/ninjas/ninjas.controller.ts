@@ -27,4 +27,13 @@ export class NinjasController {
     createNew(@Body() createNinja: CreateNinjaDto) {
         return this.service.createOne(createNinja)
     }
+
+    @Post('verify')
+    verifyPayload(@Body() payload: any): any {
+        return {
+            status: 'success',
+            message: 'Verification successful',
+            payload
+        };
+    }
 }
