@@ -71,7 +71,7 @@ Expected response:
 
 ## Contributors
 
-- [Kingsley Ohaneme](https://linkedin.com/in/ohaneme-kingsley)
+- Kingsley Ohaneme - [Connect with me on LinkedIn](https://linkedin.com/in/ohaneme-kingsley)
 
 ## Conclusion
 
